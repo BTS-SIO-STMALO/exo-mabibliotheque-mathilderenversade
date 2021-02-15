@@ -22,7 +22,9 @@
                 <a href="index.php?order=name" class="btn btn-primary">Trier par nom</a>&nbsp;
                 <a href="index.php?order=author" class="btn btn-info">Trier par auteur</a>&nbsp;
                 <!-- TODO #2 n'afficher ce bouton que s'il y a un tri -->
-                <a href="index.php" class="btn btn-dark">Annuler le tri</a><br>              
+                <?php if (isset($_GET['order'])) :?>
+                <a href="index.php" class="btn btn-dark">Annuler le tri</a><br> 
+                <?php endif ;?>             
                 <br>
                 <table class="table table-striped">
                 <thead>
