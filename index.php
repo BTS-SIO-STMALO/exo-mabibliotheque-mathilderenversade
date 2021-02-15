@@ -38,14 +38,21 @@ if (!empty($_POST)) {
 
 // Liste des Genres
 // TODO #4 récupérer cette liste depuis la base de données
-
+/*
 $genreList = array(
     1 => 'Drame',
     2 => 'Poésie',
     3 => 'Je suis un genre statique',
     4 => 'Salut'
 );
+*/
 
+$sqlGenre = 'SELECT `name` from `genre`;
+';
+$pdo = $dbConnexion->getPdo();
+$pdoStatement = $pdo->query($sqlGenre);
+$genreList = $pdoStatement->fetchAll(PDO::FETCH_COLUMN);
+var_dump($genreList);
 
 
 
