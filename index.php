@@ -4,6 +4,7 @@
 require __DIR__.'/inc/db.php'; // Pour __DIR__ => http://php.net/manual/fr/language.constants.predefined.php
 // Rappel : la variable $pdo est disponible dans ce fichier
 //          car elle a été créée par le fichier inclus ci-dessus
+$dbConnexion = new DB; 
 
 // Initialisation de variables (évite les "NOTICE - variable inexistante")
 $bookList = array();
@@ -49,8 +50,7 @@ $genreList = array(
 
 
 // TODO #1 écrire la requête SQL permettant de récupérer les livres en base de données (mais ne pas l'exécuter maintenant)
-$sql = '
-
+$sql = 'SELECT * FROM `book` 
 ';
 
 // Si un tri a été demandé, on réécrit la requête
@@ -71,7 +71,11 @@ if (!empty($_GET['order'])) {
     }
 }
 // TODO #1 exécuter la requête contenue dans $sql et récupérer les valeurs dans la variable $BookList
-
+$pdo = $dbConnexion->getPdo();
+$pdoStatement = $pdo->query($sql);
+var_dump($pdoStatement);
+$bookList = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);
+var_dump($bookList);
 
 // Inclusion du fichier s'occupant d'afficher le code HTML
 require __DIR__.'/view/book.php';
