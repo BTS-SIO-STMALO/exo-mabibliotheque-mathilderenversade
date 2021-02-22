@@ -45,7 +45,8 @@
                         <td><?= $book['name'];?></td>
                         <td><?= $book['author'];?></td>
                         <td><?= $book['release_date'];?></td>
-                        <td><?= $book['genre_id'];?></td>
+                        <!--Ici je ne veux pas que ce soit l'id du genre qui s'affiche mais bien le name du genre, du coup je vais utiliser ma variable $genreList qui est un tableau qui stocke tout mes genres en lui transmettant l'id comme clé-->
+                        <td><?= $genreList[$book['genre_id']];?></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
