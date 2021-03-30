@@ -15,7 +15,7 @@
         <div class="jumbotron">
             <h1 class="display-4">Mes livres à moi</h1>
             <p class="lead">C'est moi qui l'ai fait je suis trop contente</p>
-            <a href="" class="btn btn-dark col-md-1.5 offset-md-10"> Se connecter</a>
+            <a href="connexion.php" class="btn btn-warning offset-md-10"> Se connecter</a>
         </div>
         <h1></h1>
         <div class="row">
