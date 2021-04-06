@@ -19,6 +19,7 @@
             session_start();
             var_dump($_SESSION);
             ?>
+            <a href="inscription.php" style="margin-bottom: 2%" class="btn btn-primary offset-md-10"> S'inscrire</a>
             <a href="connexion.php" class="btn btn-warning offset-md-10"> Se connecter</a>
         </div>
         <h1></h1>
