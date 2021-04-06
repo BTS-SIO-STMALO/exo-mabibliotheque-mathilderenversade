@@ -15,6 +15,10 @@
         <div class="jumbotron">
             <h1 class="display-4">Mes livres à moi</h1>
             <p class="lead">C'est moi qui l'ai fait je suis trop contente</p>
+            <?php 
+            session_start();
+            var_dump($_SESSION);
+            ?>
             <a href="connexion.php" class="btn btn-warning offset-md-10"> Se connecter</a>
         </div>
         <h1></h1>

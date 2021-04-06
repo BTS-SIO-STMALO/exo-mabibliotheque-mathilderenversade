@@ -46,3 +46,20 @@ input[type=submit]:hover {
     color: #138496;
     border: 1px solid #138496;
 }
+
+#content {
+    width: 500px;
+    margin: 5% auto;
+}
+
+#content img {
+    max-width: 100%;
+}
+
+.content-message {
+    text-align: center;
+}
+
+.content-message p {
+    font-size: x-large;
+}
