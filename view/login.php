@@ -20,7 +20,15 @@
             <label><strong>Mot de passe</strong></label>
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
             <input type="submit" value="LOGIN">
-            
+            <?php 
+            if (isset($_GET['erreur'])) {
+              $erreur = $_GET['erreur'];
+              if($erreur == 1){
+                echo "<p style='color: red'> Utilisateur ou mot de passe incorrect</p>";
+              }
+            }
+            ?>
+
         </form>
     </div>
   </body>
