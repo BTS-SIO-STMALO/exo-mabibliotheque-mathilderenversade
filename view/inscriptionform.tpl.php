@@ -13,7 +13,7 @@
   </head>
   <body>
     <div id="container">
-        <form action="" method="POST">
+        <form action="inscriptionController.php" method="POST">
             <h1>Inscription</h1>
             <label><strong>Nom d'utilisateur</strong></label>
             <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
