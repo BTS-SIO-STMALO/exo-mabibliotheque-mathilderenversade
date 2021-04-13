@@ -16,16 +16,19 @@ if (isset($_POST['username']) && isset($_POST['password']))
 
     if($_POST['username']!=="" && $_POST['password']!==""){
 
-        $pdoConnexionSecured = $pdo->prepare("SELECT * FROM utilisateurs WHERE `name`=:toto and `password`=:password");
+        $pdoConnexionSecured = $pdo->prepare("SELECT * FROM utilisateurs WHERE `name`=:toto");
         $pdoConnexionSecured->bindValue(':toto', $_POST['username']);
-        $pdoConnexionSecured->bindValue(':password', $_POST['password']);
+        //$pdoConnexionSecured->bindValue(':password', $_POST['password']);
         $pdoConnexionSecured->execute();
         $result = $pdoConnexionSecured->fetch(PDO::FETCH_ASSOC);
-        print_r($result);
+        //print_r($result);
         var_dump($result);
-        //die;
+        $isPasswordCorrect = password_verify($_POST['password'], $result['password']);
+        var_dump($isPasswordCorrect);
+        die;
 
-        if ($result != 0) {
+        if ($isPasswordCorrect != 0) {
+            die;
             $_SESSION['name'] = $result['name'];
             var_dump($_SESSION['name']);
             //die;
