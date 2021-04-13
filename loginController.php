@@ -11,8 +11,6 @@ if (isset($_POST['username']) && isset($_POST['password']))
     $dbConnexion = new DB ;
     $pdo = $dbConnexion->getPdo();
 
-    print_r($_POST);
-    //die;
 
     if($_POST['username']!=="" && $_POST['password']!==""){
 
@@ -22,13 +20,11 @@ if (isset($_POST['username']) && isset($_POST['password']))
         $pdoConnexionSecured->execute();
         $result = $pdoConnexionSecured->fetch(PDO::FETCH_ASSOC);
         //print_r($result);
-        var_dump($result);
-        $isPasswordCorrect = password_verify($_POST['password'], $result['password']);
-        var_dump($isPasswordCorrect);
-        die;
+        //var_dump($result);
+        $passToCheck = $_POST['password'];
+        $isPasswordCorrect = password_verify($passToCheck, $result['password']);
 
         if ($isPasswordCorrect != 0) {
-            die;
             $_SESSION['name'] = $result['name'];
             var_dump($_SESSION['name']);
             //die;
